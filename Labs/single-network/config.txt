@@ -1,0 +1,21 @@
+for router
+
+
+Router>en
+Router#conf t
+Router(config)#interface port
+Router(config)#interface port-channel 1
+Router(config-if)#ip address 192.168.1.254 255.255.255.0
+Router(config-if)#no sh
+
+Router(config)#int range gig0/0/0 - gig0/0/1
+Router(config-if-range)#channel-group 1 
+Router(config-if-range)#no sh
+
+
+for switch 
+Switch>en
+Switch#conf t
+Switch(config)#int range gig0/1 - gig0/2
+Switch(config-if-range)#channel-group 1 mode passive 
+Switch(config-if-range)#no sh
