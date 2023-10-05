@@ -1,0 +1,21 @@
+for switch0
+
+Switch>
+Switch>en
+Switch#conf t
+Switch(config)#int range f0/1 -f0/4
+Switch(config-if-range)#channel-group 1 mode active
+Switch(config-if-range)#switchport mode trunk
+Switch(config-if-range)#no sh
+
+
+for switch1
+
+
+Switch>
+Switch>en
+Switch#conf t
+Switch(config)#int range f0/1 -f0/4
+Switch(config-if-range)#channel-group 1 mode passive
+Switch(config-if-range)#switchport mode trunk
+Switch(config-if-range)#no sh
